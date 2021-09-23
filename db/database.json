@@ -1,0 +1,40 @@
+{
+    "TiposDeMateriais": {
+        "Plasticos": [
+            {
+                "Nome": "",
+                "End": "",
+                "Phone": "",
+                "Longitude": null,
+                "Latitude": null
+            }
+        ],
+        "Aluminio": [
+            {
+                "Nome": "",
+                "End": "",
+                "Phone": "",
+                "Longitude": null,
+                "Latitude": null
+            }
+        ],
+        "Metais Ferrosos": [
+            {
+                "Nome": "",
+                "End": "",
+                "Phone": "",
+                "Longitude": null,
+                "Latitude": null
+            }
+        ],
+        "Papel e Papelao": [
+            {
+                "Nome": "",
+                "End": "",
+                "Phone": "",
+                "Longitude": null,
+                "Latitude": null
+            }
+        ]
+    }
+}
