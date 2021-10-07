@@ -2,7 +2,7 @@
     "TiposDeMateriais": {
         "Plasticos": [
             {
-                "Nome": "",
+                "Nome": "Tio Pedronsa",
                 "End": "",
                 "Phone": "",
                 "Longitude": null,
@@ -11,7 +11,7 @@
         ],
         "Aluminio": [
             {
-                "Nome": "",
+                "Nome": "Tio Cleiton",
                 "End": "",
                 "Phone": "",
                 "Longitude": null,
@@ -20,7 +20,7 @@
         ],
         "Metais Ferrosos": [
             {
-                "Nome": "",
+                "Nome": "Tia Maria",
                 "End": "",
                 "Phone": "",
                 "Longitude": null,
@@ -29,7 +29,7 @@
         ],
         "Papel e Papelao": [
             {
-                "Nome": "",
+                "Nome": "Tia Jussara",
                 "End": "",
                 "Phone": "",
                 "Longitude": null,
