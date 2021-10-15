@@ -9,15 +9,6 @@
                 "Latitude": null
             }
         ],
-        "Aluminio": [
-            {
-                "Nome": "Tio Cleiton",
-                "End": "",
-                "Phone": "",
-                "Longitude": null,
-                "Latitude": null
-            }
-        ],
         "Metais Ferrosos": [
             {
                 "Nome": "Tia Maria",
@@ -27,9 +18,27 @@
                 "Latitude": null
             }
         ],
-        "Papel e Papelao": [
+        "Papel": [
             {
                 "Nome": "Tia Jussara",
+                "End": "",
+                "Phone": "",
+                "Longitude": null,
+                "Latitude": null
+            }
+        ],
+        "Vidro": [
+            {
+                "Nome": "Tio Cletion",
+                "End": "",
+                "Phone": "",
+                "Longitude": null,
+                "Latitude": null
+            }
+        ],
+        "Pilhas e baterias": [
+            {
+                "Nome": "Tia Gabriela",
                 "End": "",
                 "Phone": "",
                 "Longitude": null,
