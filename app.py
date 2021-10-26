@@ -1,4 +1,5 @@
 import json
+import geopy.distance
 
 ListaDeFuncoes = []
 ListaDeTipos = ["Plasticos", "Metais Ferrosos", "Papel", "Vidro", "Pilhas e baterias"]
@@ -6,6 +7,8 @@ ListaDeTipos = ["Plasticos", "Metais Ferrosos", "Papel", "Vidro", "Pilhas e bate
 arquivo = open("db\database.json", )
 
 dados = json.load(arquivo)
+
+listaMateriais = dados["TiposDeMateriais"]
 
 def menu():
     print("===" * 20)
@@ -33,10 +36,14 @@ def comoReciclar(): # Mostra um texto explicando como reciclar os itens
     pass
 
 def pontoDeColeta(): # Lista todos os nossos pontos de coleta
-    
+
     for i in range(0, 5):
 
-        print(f'{dados["TiposDeMateriais"][ListaDeTipos[i]]}')
+        print(ListaDeTipos[i])
+
+        for j in range(0, len(listaMateriais[ListaDeTipos[i]])):
+        
+            print(f'{listaMateriais[ListaDeTipos[i]][j]}')
 
 def filtrarPontosDeColeta(): # Filtra os pontos de coleta pelo tipo
 
@@ -54,23 +61,61 @@ def filtrarPontosDeColeta(): # Filtra os pontos de coleta pelo tipo
 
             break
     
-    for i in range(0, len(dados["TiposDeMateriais"][material])):
+    for i in range(0, len(listaMateriais[material])):
 
-        print(f'{dados["TiposDeMateriais"][material][i]}')
+        print(f'{listaMateriais[material][i]}')
 
 def localizarMaisProximo(): # Localiza o ponto de coleta mais proximo pelas cordenadas
-    pass
+
+    Longitude = float(input("Informe a Longitude: "))
+    Latitude = float(input("Informe a Latitude: "))
+
+    menuTipos()
+
+    TipoDeLixo = int(input("Informe a Tipo de Lixo: ")) - 1
+
+    listaLocais = dados["TiposDeMateriais"][ListaDeTipos[TipoDeLixo]]
+
+    usuario_coords_1 = [Longitude, Latitude]
+    mais_proxima_coords_2 = []
+
+    if len(listaLocais) > 1:
+
+        distance = 0
+        distanceAtual = 0
+        key_distance = False
+
+        for item in listaLocais:
+
+            mais_proxima_coords_2.append(item["Longitude"])
+            mais_proxima_coords_2.append(item["Latitude"])
+
+            distanceAtual = geopy.distance.GeodesicDistance(usuario_coords_1, mais_proxima_coords_2).km
+
+            if key_distance == False or distance > distanceAtual:
+
+                key_distance = True
+
+                distance = distanceAtual
+
+            mais_proxima_coords_2 = []
+
+        print(distance)
+
+    else:
+
+        print(listaLocais)
 
 ListaDeFuncoes = [comoReciclar, pontoDeColeta, filtrarPontosDeColeta, localizarMaisProximo]
 
-menu()
-filtrarFuncao(perguntarFuncao())
+continuacao = "s"
 
+while continuacao != "n":
 
+    menu()
+    filtrarFuncao(perguntarFuncao())
 
-# f = open("aps-reciclagem\db\database.json", )
-
-# dados = json.load(f)
-
-# print(dados["TiposDeMateriais"]["Plasticos"])
-    
+    print("===" * 20)
+    print('Digite "n" para parar o programa')
+    continuacao = input("Dejesa continuar ? ")
+    print("===" * 20)
