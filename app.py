@@ -99,6 +99,8 @@ def localizarMaisProximo(): # Localiza o ponto de coleta mais proximo pelas cord
                 distance = distanceAtual
 
             mais_proxima_coords_2 = []
+        
+        key_distance = False
 
         print(distance)
 
