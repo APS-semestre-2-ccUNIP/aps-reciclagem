@@ -37,13 +37,13 @@ def comoReciclar(): # Mostra um texto explicando como reciclar os itens
 
 def pontoDeColeta(): # Lista todos os nossos pontos de coleta
 
-    for i in range(0, 5):
+    for ponto in ListaDeTipos:
 
-        print(ListaDeTipos[i])
+        print(ponto)
 
-        for j in range(0, len(listaMateriais[ListaDeTipos[i]])):
-        
-            print(f'{listaMateriais[ListaDeTipos[i]][j]}')
+        for tipo in listaMateriais[ponto]: 
+
+            print(tipo)
 
 def filtrarPontosDeColeta(): # Filtra os pontos de coleta pelo tipo
 
@@ -60,10 +60,10 @@ def filtrarPontosDeColeta(): # Filtra os pontos de coleta pelo tipo
             material = ListaDeTipos[i]
 
             break
-    
-    for i in range(0, len(listaMateriais[material])):
 
-        print(f'{listaMateriais[material][i]}')
+    for item in listaMateriais[material]:
+
+        print(item)
 
 def localizarMaisProximo(): # Localiza o ponto de coleta mais proximo pelas cordenadas
 
@@ -112,12 +112,18 @@ ListaDeFuncoes = [comoReciclar, pontoDeColeta, filtrarPontosDeColeta, localizarM
 
 continuacao = "s"
 
-while continuacao != "n":
+def main(continuacao):
 
-    menu()
-    filtrarFuncao(perguntarFuncao())
+    while continuacao != "n":
 
-    print("===" * 20)
-    print('Digite "n" para parar o programa')
-    continuacao = input("Dejesa continuar ? ")
-    print("===" * 20)
+        menu()
+        filtrarFuncao(perguntarFuncao())
+
+        print("===" * 20)
+        print('Digite "n" para parar o programa')
+        continuacao = input("Dejesa continuar ? ")
+        print("===" * 20)
+
+if __name__ == "__main__":
+
+    main(continuacao)
