@@ -33,7 +33,13 @@ def filtrarFuncao(index):
     ListaDeFuncoes[index - 1]()
 
 def comoReciclar(): # Mostra um texto explicando como reciclar os itens
-    pass
+    print("===" * 20)
+    print("Nosso sistema funciona da seguinte maneira: \n")
+    print("Você escolhe uma função do nosso menu, \n")
+    print("Para receber as informaões que desejar. \n")
+    print("Algumas funções precisam saber o tipo de \n")
+    print("material que você deseja reciclar")
+    print("===" * 20)
 
 def pontoDeColeta(): # Lista todos os nossos pontos de coleta
 
